@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "69522043928",
+    "firebase_url": "https://mobileapi-13e94.firebaseio.com",
+    "project_id": "mobileapi-13e94",
+    "storage_bucket": "mobileapi-13e94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69522043928:android:636a1a3cdde4ac53",
+        "android_client_info": {
+          "package_name": "com.dubtel.mobileapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69522043928-69oh4i393gbooprfrvba3rinueoafjkj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw82q1r2j8k_kgG0gAOyHEfASVie_Oozo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
