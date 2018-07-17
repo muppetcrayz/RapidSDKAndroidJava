@@ -179,40 +179,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(Void... params) {
 
-            final String authenticateString = "https://api.dubtel.com/v1/logOut";
+            final String authenticateString = "https://api.rapidsdk.com/v1/logOut";
 
             Thread t1 = new Thread(new Runnable(){
                 @Override
                 public void run() {
                     try {
                         try {
-                            // Load CAs from an InputStream
-                            CertificateFactory cf = CertificateFactory.getInstance("X.509");
-
-                            InputStream fis = getResources().openRawResource(R.raw.mycert);
-
-                            InputStream caInput = new BufferedInputStream(fis);
-                            Certificate ca;
-                            try {
-                                ca = cf.generateCertificate(caInput);
-                            } finally {
-                                caInput.close();
-                            }
-
-// Create a KeyStore containing our trusted CAs
-                            String keyStoreType = KeyStore.getDefaultType();
-                            KeyStore keyStore = KeyStore.getInstance(keyStoreType);
-                            keyStore.load(null, null);
-                            keyStore.setCertificateEntry("ca", ca);
-
-// Create a TrustManager that trusts the CAs in our KeyStore
-                            String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
-                            TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
-                            tmf.init(keyStore);
-
-// Create an SSLContext that uses our TrustManager
-                            SSLContext context = SSLContext.getInstance("TLS");
-                            context.init(null, tmf.getTrustManagers(), null);
 
                             String postString = "session_id=" + mSessionID + "&user_id=" + mUserID;
                             byte[] postData = postString.getBytes(StandardCharsets.UTF_8);
@@ -222,7 +195,6 @@ public class MainActivity extends AppCompatActivity {
                             HttpsURLConnection urlConnection =
                                     (HttpsURLConnection)url.openConnection();
                             urlConnection.setDoOutput(true);
-                            urlConnection.setSSLSocketFactory(context.getSocketFactory());
                             urlConnection.setRequestProperty ("Authorization", "Basic " + SharedData.getInstance().getToken());
                             urlConnection.setRequestMethod("POST");
 
