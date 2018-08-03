@@ -156,7 +156,7 @@ public class LoginActivity extends AppCompatActivity {
                         try {
 
 
-                            String postString = "username=" + mEmail + "&password=" + mPassword;
+                            String postString = "email=" + mEmail + "&password=" + mPassword;
                             byte[] postData = postString.getBytes(StandardCharsets.UTF_8);
 
 // Tell the URLConnection to use a SocketFactory from our SSLContext
